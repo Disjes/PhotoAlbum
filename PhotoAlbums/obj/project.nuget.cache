@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "C/H4mqvsiiHoNny9fQSCLYxFrbQpcnMShukF271w+DA+QE0piWLZNdX/H2jA3Xerz38tAzQryCGm5ycLo5nUvQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\david.robles\\source\\repos\\PhotoAlbums\\PhotoAlbums\\PhotoAlbums.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\david.robles\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\david.robles\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

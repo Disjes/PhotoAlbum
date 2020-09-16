@@ -1,0 +1,26 @@
+﻿@model List<Album>
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>User Id</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            bool active = false;
+            foreach (var album in Model)
+            {
+                <tr class="@(active ? "active-row" : "")">
+                    <td>@album.title</td>
+                    <td>@album.userId</td>
+                    <td><a asp-controller="Photos" asp-action="PhotosByAlbum" asp-route-id="@album.id">Visualizar Álbum</a></td>
+                </tr>
+                active = active ? false : true;
+            }
+        }
+        <!-- and so on... -->
+    </tbody>
+</table>

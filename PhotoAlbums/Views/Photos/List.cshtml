@@ -1,0 +1,51 @@
+﻿@model List<Photo>
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Url</th>
+            <th>Thumbnail</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            bool active = false;
+            foreach (var photo in Model)
+            {
+                <tr class="@(active ? "active-row" : "")">
+                    <td>@photo.title</td>
+                    <td><a href="@photo.url">@photo.url</a></td>
+                    <td><img src="@photo.thumbnailUrl" /></td>
+                    <td><button onclick="ViewComments(@photo.id)">Ver Comentarios</button></td>
+                </tr>
+                active = active ? false : true;
+            }
+        }
+        <!-- and so on... -->
+    </tbody>
+</table>
+
+<div id="CommentsContainer">
+
+</div>
+
+<script type="text/javascript">
+    function ViewComments(id) {
+        var url = "/Comments/CommentsByPhoto/?id=" + id.toString();
+        console.log(url);
+
+        fetch(url, {
+            method: "GET",
+            headers: {
+                "content-type": "text/plain"
+            }
+        }).then(html => { 
+            html.text().then(function (text) {
+                document.getElementsByName("CommentsContainer").html = text;
+            });
+            
+        });
+    }
+</script>
