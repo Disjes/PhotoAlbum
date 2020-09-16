@@ -43,7 +43,7 @@
             }
         }).then(html => { 
             html.text().then(function (text) {
-                document.getElementsByName("CommentsContainer").html = text;
+                document.getElementById("CommentsContainer").innerHTML
             });
             
         });
